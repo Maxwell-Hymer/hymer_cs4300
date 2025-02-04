@@ -4,6 +4,7 @@ import task3
 import task4
 import task5
 import task6
+import task7
 
 # Test task1 and capture the standard output using capfd
 def test_task1(capfd):
@@ -82,3 +83,7 @@ def test_read_me_word_count():
         test_func_name = f'test_word_count_{filename.replace(".", "_")}'
         globals()[test_func_name] = make_test_function(filename, expected_count)
 
+# Task 7 test case
+def test_numpy_demo():
+    data_type = task7.numpy_demo(3, 6)
+    assert data_type == "int64"
