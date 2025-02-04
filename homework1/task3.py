@@ -1,5 +1,4 @@
-def if_statement_demo():
-    a = -3
+def if_statement_demo(a):
     value_state = None
 
     if a > 0:
@@ -50,6 +49,6 @@ def while_loop_demo():
     return sum_to_hundred
 
 if __name__ == "__main__":
-    print(if_statement_demo())
+    print(if_statement_demo(0))
     print(for_loop_demo())
     print(while_loop_demo())

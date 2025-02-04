@@ -1,33 +1,25 @@
 # Test for integers
-def integers_demo():
-    a = 5
-    b = 3
+def integers_demo(a, b):
     # Example integer operation
     return a + b 
 
 # Test for floating point values
-def floating_value_demo():
-    a = 2.5
-    b = -1.15
+def floating_value_demo(a, b):
     # Example float operation
     return a * b
 
 # Test for strings
-def string_demo():
-    greeting = "Hello"
-    name = "Max"
+def string_demo(greeting, name):
     # Example string operation
     return f"{greeting}, {name}!"
 
 # Test for booleans
-def boolean_demo():
-    is_true = True
-    is_false = False
+def boolean_demo(boolean_one, boolean_two):
     # Example boolean operation
-    return is_true and not is_false
+    return boolean_one and not boolean_two
 
 if __name__ == "__main__":
-    print(integers_demo())
-    print(floating_value_demo())
-    print(string_demo())
-    print(boolean_demo())
+    print(integers_demo(4,10))
+    print(floating_value_demo(3.1, .5))
+    print(string_demo("Hey", "Ted"))
+    print(boolean_demo(True, False))
