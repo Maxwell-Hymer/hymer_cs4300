@@ -2,6 +2,7 @@ import task1
 import task2
 import task3
 import task4
+import task5
 
 # Test task1 and capture the standard output using capfd
 def test_task1(capfd):
@@ -45,3 +46,19 @@ def test_calculate_discount():
     assert task4.calculate_discount(200, 15.5) == 169.0
     assert task4.calculate_discount(150.75, 10) == 135.675
 
+# Tests for task 5
+def test_favorite_books():
+    expected_books = [
+        {"title": "ATTACHMENT THEORY A Guide to Strengthening the Relationships in Your Life", "author": "Thais Gibson"},
+        {"title": "THE BODY KEEPS THE SCORE", "author": "Bessel Van Der Kolk, M.D."},
+        {"title": "The Freedom Model", "author": "Michelle Dunbar, Mark Scheeren, Steven Slate"}
+    ]
+    assert task5.favorite_books_demo() == expected_books
+
+def test_student_database():
+    expected_database = {
+        "student1" : {"name": "Max", "student_id": "00001"},
+        "student2" : {"name": "Jim", "student_id": "00002"},
+        "student3" : {"name": "Steve", "student_id": "00003"}
+    }
+    assert task5.student_database_demo() == expected_database
