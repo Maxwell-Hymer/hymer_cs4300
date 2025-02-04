@@ -7,7 +7,7 @@ def favorite_books_demo():
         {"title": "THE BODY KEEPS THE SCORE", "author": "Bessel Van Der Kolk, M.D."},
         {"title": "The Freedom Model", "author": "Michelle Dunbar, Mark Scheeren, Steven Slate"}
     ]
-
+    # Gets books via slicing
     first_three_books = favorite_books[:3]
     return first_three_books
 

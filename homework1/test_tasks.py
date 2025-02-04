@@ -17,32 +17,42 @@ def test_task1(capfd):
 
 # Tests for task2
 def test_integer_demo():
+    # Adding two integer values
     assert task2.integers_demo(3, 5) == 8
 
 def test_floating_value_demo():
+    # Multiply two floating point values
     assert task2.floating_value_demo(2.5, -1.15) == -2.875
 
 def test_string_demo():
+    # Concatonate two strings into one string
     assert task2.string_demo("Hello", "Max") == "Hello, Max!"
 
 def test_boolean_demo():
+    # Tests two boolean values in an "and not" condition
     assert task2.boolean_demo(True, False) is True
 
 # Tests for task 3
 def test_if_statement_demo():
+    # Tests the if statment given the passed value to see if the value is
+    # Negative, Postive, or Zero
     assert task3.if_statement_demo(-3) == "Negative"
     assert task3.if_statement_demo(5) == "Positive"
     assert task3.if_statement_demo(0) == "Zero"
 
 
 def test_for_loop_demo():
+    # Tests to see if the output values are the first 10 prime numbers
     assert task3.for_loop_demo() == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
 
 def test_while_loop_demo():
+    # Tests the accuracy if the while loop produces the sum of all the values from 1 to 100
     assert task3.while_loop_demo() == 5050
 
 # Tests for task 4
 def test_calculate_discount():
+    # A series of values and discounts to test the accuracy with integers
+    # and floating point values
     assert task4.calculate_discount(100, 20) == 80
     assert task4.calculate_discount(100.0, 20.0) == 80.0
     assert task4.calculate_discount(200, 15.5) == 169.0
@@ -50,6 +60,7 @@ def test_calculate_discount():
 
 # Tests for task 5
 def test_favorite_books():
+    # Tests for list slicing for the given books
     expected_books = [
         {"title": "ATTACHMENT THEORY A Guide to Strengthening the Relationships in Your Life", "author": "Thais Gibson"},
         {"title": "THE BODY KEEPS THE SCORE", "author": "Bessel Van Der Kolk, M.D."},
@@ -58,6 +69,7 @@ def test_favorite_books():
     assert task5.favorite_books_demo() == expected_books
 
 def test_student_database():
+    # Tests to see if the database for students is correct
     expected_database = {
         "student1" : {"name": "Max", "student_id": "00001"},
         "student2" : {"name": "Jim", "student_id": "00002"},
@@ -85,5 +97,6 @@ def test_read_me_word_count():
 
 # Task 7 test case
 def test_numpy_demo():
+    # Creates a numpy array with the given values and returns the data type of the values
     data_type = task7.numpy_demo(3, 6)
     assert data_type == "int64"

@@ -1,6 +1,9 @@
 def if_statement_demo(a):
+    # Initialize the state for returning
     value_state = None
 
+    # Checks the argument value to see if it is either
+    # Positive, Negative, or Zero
     if a > 0:
         value_state = "Positive"
     elif a < 0:
@@ -39,9 +42,12 @@ def for_loop_demo():
     return prime_numbers
 
 def while_loop_demo():
+    # Initialize iterator value and sum
     sum_to_hundred = 0
     counter = 1
 
+    # Loops until counter is either greater or equal to 100
+    # summing every value 1 to 100
     while counter <= 100:
         sum_to_hundred += counter
         counter += 1
