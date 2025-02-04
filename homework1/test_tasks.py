@@ -3,6 +3,7 @@ import task2
 import task3
 import task4
 import task5
+import task6
 
 # Test task1 and capture the standard output using capfd
 def test_task1(capfd):
@@ -62,3 +63,22 @@ def test_student_database():
         "student3" : {"name": "Steve", "student_id": "00003"}
     }
     assert task5.student_database_demo() == expected_database
+
+# Task 6 test case
+def test_read_me_word_count():
+    # Define expected word counts for each text file
+    expected_word_counts = {
+        'task6_read_me.txt': 127,
+    }
+
+    # Dynamically create test functions for each text file
+    for filename, expected_count in expected_word_counts.items():
+        def make_test_function(filename, expected_count):
+            def test_word_count():
+                assert count_words_in_file(filename) == expected_count
+            return test_word_count
+
+        # Create a unique function name for each test
+        test_func_name = f'test_word_count_{filename.replace(".", "_")}'
+        globals()[test_func_name] = make_test_function(filename, expected_count)
+
