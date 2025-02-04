@@ -1,5 +1,6 @@
 import task1
 import task2
+import task3
 
 # Test task1 and capture the standard output using capfd
 def test_task1(capfd):
@@ -22,5 +23,15 @@ def test_string_demo():
 
 def test_boolean_demo():
     assert task2.boolean_demo() is True
+
+# Tests for task 3
+def test_if_statement_demo():
+    assert task3.if_statement_demo() == "Negative"
+
+def test_for_loop_demo():
+    assert task3.for_loop_demo() == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+
+def test_while_loop_demo():
+    assert task3.while_loop_demo() == 5050
 
 
