@@ -17,3 +17,8 @@ class Seat(models.Model):
     def __str__(self):
         return self.seat_number
 
+class Booking(models.Model):
+    movie = models.
+    seat = models.
+    user = models.
+    booking_date = models.
