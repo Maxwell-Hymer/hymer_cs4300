@@ -18,7 +18,9 @@ class Seat(models.Model):
         return self.seat_number
 
 class Booking(models.Model):
-    movie = models.
-    seat = models.
-    user = models.
-    booking_date = models.
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    seat = models.ForeignKey(Seat, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    booking_date = models.DateTimeField(auto_add_now=true)
+    def __str__(self):
+        return f"Booking for {self.movie.title} by {self.user.username} on {self.booking_date}"
