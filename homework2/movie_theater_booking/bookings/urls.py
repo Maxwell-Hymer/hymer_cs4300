@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from views import MovieViewSet, SeatViewSet, BookingViewSet
+from .views import MovieViewSet, SeatViewSet, BookingViewSet
 
 # Initialize a router and assign our viewsets with it
 router = DefaultRouter()
@@ -10,5 +10,5 @@ router.register(r'bookings', BookingViewSet)
 
 # API URLs determined automatically by the router
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
 ]

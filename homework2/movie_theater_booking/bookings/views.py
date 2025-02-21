@@ -5,11 +5,11 @@ from .serializers import MovieSerializer, SeatSerializer, BookingSerializer
 
 # Create your views here.
 class MovieViewSet(viewsets.ModelViewSet):
-    queryset = Movie.Objects.all()
+    queryset = Movie.objects.all()
     serializer_class = MovieSerializer
 
 class SeatViewSet(viewsets.ModelViewSet):
-    queryset = Seat.Objects.all()
+    queryset = Seat.objects.all()
     serializer_class = SeatSerializer
 
     # Option to filter seats via availability or another criteria
@@ -17,7 +17,7 @@ class SeatViewSet(viewsets.ModelViewSet):
         return super().get_queryset().filter(booking_status=False)
 
 class BookingViewSet(viewsets.ModelViewSet):
-    queryset = Booking.Objects.all()
+    queryset = Booking.objects.all()
     serializer_class = BookingSerializer
 
     # Optionally filter bookings for active user
