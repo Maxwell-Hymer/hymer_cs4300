@@ -1,5 +1,7 @@
 {% extends 'bookings/base.html' %}
+
 {% block title %}Book Seats{% endblock %}
+
 {% block content %}
 <h2>Book Seats for {{ movie.title }}</h2>
 <form method="post">
@@ -8,10 +10,10 @@
         {% for seat in available_seats %}
         <li class="list-group-item">
             <input type="checkbox" name="seats" value="{{ seat.id }}">
-            {{ seat.seat_number }} {% if seat.booking_status %} (Booked) {% endif %}
+            {{ seat.seat_number }} {% if seat.is_booked %} (Booked) {% endif %}
         </li>
         {% empty %}
-        <li class="list-group-item"> No seats available.</li>
+        <li class="list-group-item">No seats available.</li>
         {% endfor %}
     </ul>
     <button type="submit" class="btn btn-primary">Book Selected Seats</button>

@@ -56,7 +56,7 @@ ROOT_URLCONF = 'movie_theater_booking.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/student/hymer_cs4300/homework2/movie_theater_booking/bookings/templates'],
+        'DIRS': [BASE_DIR / 'bookings' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,3 +131,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+FORCE_SCRIPT_NAME = "/proxy/3000"
