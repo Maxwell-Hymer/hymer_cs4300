@@ -4,7 +4,7 @@
 
 {% block content %}
 <h2>Book Seats for {{ movie.title }}</h2>
-<form method="post">
+<form method="post" action="{% url 'seat_booking' movie.id %}">
     {% csrf_token %}
     <ul class="list-group">
         {% for seat in available_seats %}
@@ -18,4 +18,5 @@
     </ul>
     <button type="submit" class="btn btn-primary">Book Selected Seats</button>
 </form>
+<a href="{% url 'booking_history' %}">Go to Booking History</a>
 {% endblock %}

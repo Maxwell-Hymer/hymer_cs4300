@@ -132,4 +132,14 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-FORCE_SCRIPT_NAME = "/proxy/3000"
+FORCE_SCRIPT_NAME = "/proxy/3000"  # Keep this to ensure Django respects the proxy path
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://editor-mhymercontainer-5.devedu.io',
+]
+
+LOGIN_URL = '/accounts/login/' 
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
