@@ -2,30 +2,32 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse
 from django.contrib.auth import logout
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets
 from .models import Movie, Seat, Booking
 from .serializers import MovieSerializer, SeatSerializer, BookingSerializer
 
 # Create your views here.
+# ViewSet for handling Movie API requests
 class MovieViewSet(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
-    #permission_classes = [permissions.AllowAny]
 
+# ViewSet for handling Seat API requests
 class SeatViewSet(viewsets.ModelViewSet):
     queryset = Seat.objects.all()
     serializer_class = SeatSerializer
-    #permission_classes = [permissions.AllowAny]
 
+# ViewSet for handling Booking API requests
 class BookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
-    #permission_classes = [permissions.AllowAny]
 
+# Renders the list of movies
 def movie_list(request):
     movies = Movie.objects.all()
     return render(request, 'bookings/movie_list.html', {'movies': movies})
 
+# Handle seat booking for specific movies
 def seat_booking(request, movie_id):
     movie = get_object_or_404(Movie, id=movie_id)
     available_seats = Seat.objects.filter(booking_status=False)
@@ -46,11 +48,12 @@ def seat_booking(request, movie_id):
         'available_seats': available_seats,
     })
 
+# Render the booking history for the user
 def booking_history(request):
     bookings = Booking.objects.all()
     return render(request, 'bookings/booking_history.html', {'bookings': bookings})
 
-
+# Handle user signup
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -61,6 +64,7 @@ def signup(request):
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
 
+# Custom logout view
 def custom_logout_view(request):
     logout(request)
     return redirect('/')
