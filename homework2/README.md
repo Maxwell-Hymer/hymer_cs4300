@@ -40,6 +40,11 @@ Setup Instructions:
 7. Run Development Server:
     python manage . py runserver 0.0.0.0:3000
 
+8. To log-in:
+   Username: test_user
+   Password: test_pass
+   email: test@gmail.com
+
 API Endpoints:
 The application uses the following API endpoints:
 - Movies: /api/movies/
